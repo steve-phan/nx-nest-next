@@ -2,18 +2,5 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": [
-    {
-      "path": ".packages/client-e2e"
-    },
-    {
-      "path": ".packages/client"
-    },
-    {
-      "path": ".packages/server-e2e"
-    },
-    {
-      "path": ".packages/server"
-    }
-  ]
+  "references": []
 }

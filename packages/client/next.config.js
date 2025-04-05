@@ -13,6 +13,10 @@ const nextConfig = {
     svgr: false,
   },
   output: 'export',
+  distDir: 'out',
+  images: {
+    unoptimized: true,
+  },
 };
 
 const plugins = [
