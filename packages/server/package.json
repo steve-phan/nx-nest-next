@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "tsc && webpack --config webpack.config.js",
-    "start": "node dist/main.js"
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.2",
@@ -17,19 +20,17 @@
   "nx": {
     "targets": {
       "build": {
-        "executor": "nx:run-commands",
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
         "options": {
-          "command": "webpack-cli build",
-          "args": [
-            "node-env=production"
+          "outputPath": "dist/packages/server",
+          "main": "packages/server/src/main.ts",
+          "tsConfig": "packages/server/tsconfig.json",
+          "assets": [
+            "packages/server/src/assets"
           ]
-        },
-        "configurations": {
-          "development": {
-            "args": [
-              "node-env=development"
-            ]
-          }
         }
       },
       "serve": {
@@ -39,12 +40,12 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@nx-nest-next/server:build",
-          "runBuildTargetDependencies": false
+          "buildTarget": "@nx-nest-next/server:build"
         },
         "configurations": {
           "development": {
-            "buildTarget": "@nx-nest-next/server:build:development"
+            "buildTarget": "@nx-nest-next/server:build:development",
+            "watch": true
           },
           "production": {
             "buildTarget": "@nx-nest-next/server:build:production"
