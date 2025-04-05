@@ -1,15 +1,66 @@
+# NX Nest Next Monorepo
+
+This is a monorepo containing a Next.js frontend and NestJS backend.
+
+## Development
+
+To run the development environment:
+
+```bash
+# Install dependencies
+npm install
+
+# Start both client and server in development mode
+npm run dev
+```
+
+This will start:
+
+- Next.js development server on http://localhost:3001
+- NestJS server on http://localhost:3000
+
+The NestJS server will proxy all non-API requests to the Next.js development server.
+
+## Production
+
+To build and run in production:
+
+```bash
+# Build both client and server
+npm run build
+
+# Start the production server
+npm run start
+```
+
+The production server will serve the static Next.js build files and handle API requests.
+
+## Project Structure
+
+- `packages/client`: Next.js frontend application
+- `packages/server`: NestJS backend application
+
+## Available Scripts
+
+- `npm run dev`: Start both client and server in development mode
+- `npm run dev:client`: Start only the client in development mode
+- `npm run dev:server`: Start only the server in development mode
+- `npm run build`: Build both client and server
+- `npm run build:client`: Build only the client
+- `npm run build:server`: Build only the server
+- `npm run start`: Start the production server
+
 # NxNestNext
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
 ## Finish your CI setup
 
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/IfeTQGu2bZ)
-
 
 ## Generate a library
 
@@ -65,7 +116,6 @@ npx nx sync:check
 
 [Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
 
-
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 ## Install Nx Console
@@ -78,12 +128,13 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 Learn more:
 
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
+- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 And join the Nx community:
+
 - [Discord](https://go.nx.dev/community)
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
