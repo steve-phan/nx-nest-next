@@ -1,15 +1,68 @@
 # NX Nest Next Monorepo
 
-This is a monorepo containing a Next.js frontend and NestJS backend.
+A full-stack monorepo application using Next.js for the frontend and NestJS for the backend, built with Nx.
 
-## Development
+## Features
 
-To run the development environment:
+### Development Environment
+
+- 🚀 Hot Module Replacement (HMR) for both frontend and backend
+- 🔄 Automatic browser refresh on file changes
+- 🔍 Source maps for debugging
+- 🔗 API proxy from frontend to backend
+- 🌐 CORS enabled for development
+- 📦 Workspace-based dependency management
+
+### Frontend (Next.js)
+
+- ⚛️ React 19 with TypeScript
+- 🎨 Modern UI development
+- 📱 Responsive design support
+- 🔄 Fast refresh enabled
+- 📦 Optimized production builds
+
+### Backend (NestJS)
+
+- 🏗️ Modular architecture
+- 🔐 API routing with prefix
+- 📡 WebSocket support
+- 🔄 Hot reload enabled
+- 📦 Production-ready builds
+
+### Development Tools
+
+- 🛠️ Concurrent process management
+- 🔍 Browser-sync for live reloading
+- 📝 TypeScript support
+- 🧹 Linting and formatting
+- 🔍 Debugging support
+
+## Prerequisites
+
+- Node.js (v18 or later)
+- npm (v9 or later)
+- Git
+
+## Getting Started
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/steve-phan/nx-nest-next
+
+# Navigate to the project directory
+cd nx-nest-next
+
 # Install dependencies
 npm install
+```
 
+### Development
+
+To start the development environment:
+
+```bash
 # Start both client and server in development mode
 npm run dev
 ```
@@ -18,37 +71,108 @@ This will start:
 
 - Next.js development server on http://localhost:3001
 - NestJS server on http://localhost:3000
+- Browser-sync proxy on http://localhost:3002
 
-The NestJS server will proxy all non-API requests to the Next.js development server.
+Access your application through http://localhost:3002 for the best development experience.
 
-## Production
+#### Development Features
 
-To build and run in production:
+- Hot reloading for both frontend and backend
+- Automatic browser refresh on file changes
+- API requests are proxied to the backend
+- Source maps for debugging
+- CORS enabled for development
+
+### Production Build
+
+To build the application for production:
 
 ```bash
 # Build both client and server
 npm run build
+```
 
+This will:
+
+- Build the Next.js frontend with production optimizations
+- Build the NestJS backend with production optimizations
+- Generate static files for the frontend
+- Compile TypeScript to JavaScript
+
+### Production Deployment
+
+To start the production server:
+
+```bash
 # Start the production server
 npm run start
 ```
 
-The production server will serve the static Next.js build files and handle API requests.
+The production server will:
+
+- Serve static files from the Next.js build
+- Handle API requests through NestJS
+- Run on port 3000 by default (configurable via PORT environment variable)
 
 ## Project Structure
 
-- `packages/client`: Next.js frontend application
-- `packages/server`: NestJS backend application
+```
+nx-nest-next/
+├── packages/
+│   ├── client/           # Next.js frontend application
+│   │   ├── src/          # Source code
+│   │   ├── public/       # Static files
+│   │   └── package.json  # Frontend dependencies
+│   │
+│   └── server/           # NestJS backend application
+│       ├── src/          # Source code
+│       └── package.json  # Backend dependencies
+│
+├── package.json          # Root dependencies and scripts
+└── tsconfig.base.json    # Base TypeScript configuration
+```
 
 ## Available Scripts
 
-- `npm run dev`: Start both client and server in development mode
-- `npm run dev:client`: Start only the client in development mode
-- `npm run dev:server`: Start only the server in development mode
-- `npm run build`: Build both client and server
-- `npm run build:client`: Build only the client
-- `npm run build:server`: Build only the server
-- `npm run start`: Start the production server
+### Development
+
+- `npm run dev` - Start both client and server in development mode
+- `npm run dev:client` - Start only the client in development mode
+- `npm run dev:server` - Start only the server in development mode
+
+### Build
+
+- `npm run build` - Build both client and server
+- `npm run build:client` - Build only the client
+- `npm run build:server` - Build only the server
+
+### Production
+
+- `npm run start` - Start the production server
+
+## Environment Variables
+
+### Development
+
+- `NODE_ENV=development` - Development environment
+- `PORT=3000` - Server port (optional)
+
+### Production
+
+- `NODE_ENV=production` - Production environment
+- `PORT=3000` - Server port (optional)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 # NxNestNext
 
